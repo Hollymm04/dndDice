@@ -1,285 +1,285 @@
-HOW TO  RUN THIS PROJECT
+// HOW TO  RUN THIS PROJECT
 
-download node on your computer so you can use npm calls
+// download node on your computer so you can use npm calls
 
-then install these lines
-npm init -y
-npm i express
-npm i ejs
-npm i nodemon
-
-
-make sure your server.js looks like this
-
-<!-- const express = require('express');
-const app = express();
-const port = 3000;
-const path = require('path');
-const { spawn } = require('child_process');
-
-app.set('view engine', 'ejs')
-
-app.use(express.json());
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('views', path.join(__dirname, 'views'));
+// then install these lines
+// npm init -y
+// npm i express
+// npm i ejs
+// npm i nodemon
 
 
-app.get('/', (req, res) => {
-    console.log('Here')
-    res.render('index')
-})
+// make sure your server.js looks like this
 
-app.post('/roll-dice', (req,res) =>
-{
-    const sides = req.body.sides || '20';
+// <!-- const express = require('express');
+// const app = express();
+// const port = 3000;
+// const path = require('path');
+// const { spawn } = require('child_process');
 
-    const python = spawn('python', ['dice_script.py', sides]);
+// app.set('view engine', 'ejs')
 
-    let result = '';
-    python.stdout.on('data', (data) => {
-        result += data.toString();
-    });
+// app.use(express.json());
 
-    python.on('close', (code) => {
-        res.json({ result: result.trim() });
-    });
-
-    python.stderr.on('data', (data) => {
-        console.error(`stderr: ${data}`);
-    });
-})
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.set('views', path.join(__dirname, 'views'));
 
 
+// app.get('/', (req, res) => {
+//     console.log('Here')
+//     res.render('index')
+// })
 
-app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
-  }); -->
+// app.post('/roll-dice', (req,res) =>
+// {
+//     const sides = req.body.sides || '20';
 
-  put these into a folder named public
+//     const python = spawn('python', ['dice_script.py', sides]);
 
-  main.js
-   <!-- document.querySelectorAll('.roll-dice').forEach(button => {
-    button.addEventListener('click', function() {
-      const sides = this.getAttribute('data-sides');
-      const resultDisplay = document.getElementById('result');
-      this.classList.add('rolling');
-      fetch('/roll-dice', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sides })
-      })
-      .then(response => response.json())
-      .then(data => {
-        resultDisplay.innerText = `you rolled a ${data.result} on dice D${sides}!`;
-        setTimeout(() => {
-          this.classList.remove('rolling');
-        }, 500);
-      })
-      .catch(err => {
-        resultDisplay.innerText = 'Error rolling dice!';
-        this.classList.remove('rolling');
-      });
-    });
-  });
+//     let result = '';
+//     python.stdout.on('data', (data) => {
+//         result += data.toString();
+//     });
 
-  document.getElementById('clear-button').addEventListener('click', function() { /* Clear button event listener */
-    document.getElementById('result').innerText = ''; // Clear the result text
-  }); -->
+//     python.on('close', (code) => {
+//         res.json({ result: result.trim() });
+//     });
 
-  styles.css
+//     python.stderr.on('data', (data) => {
+//         console.error(`stderr: ${data}`);
+//     });
+// })
 
-  <!-- .button-container 
-{
-    text-align: center;
-}
 
-#result {
-     /* Semi-transparent white background */
-    padding: 50px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: x-large;
-  }
 
-.roll-dice {
-    /* ... existing button styles ... */
-    background-color: #000000; /* Sienna */
-    color: white;
-    border: 2px solid #36302b;
-    border-radius: 5px;
-    padding: 12px 24px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+// app.listen(port, () => {
+//     console.log(`Server listening at http://localhost:${port}`);
+//   }); -->
+
+//   put these into a folder named public
+
+//   main.js
+//    <!-- document.querySelectorAll('.roll-dice').forEach(button => {
+//     button.addEventListener('click', function() {
+//       const sides = this.getAttribute('data-sides');
+//       const resultDisplay = document.getElementById('result');
+//       this.classList.add('rolling');
+//       fetch('/roll-dice', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ sides })
+//       })
+//       .then(response => response.json())
+//       .then(data => {
+//         resultDisplay.innerText = `you rolled a ${data.result} on dice D${sides}!`;
+//         setTimeout(() => {
+//           this.classList.remove('rolling');
+//         }, 500);
+//       })
+//       .catch(err => {
+//         resultDisplay.innerText = 'Error rolling dice!';
+//         this.classList.remove('rolling');
+//       });
+//     });
+//   });
+
+//   document.getElementById('clear-button').addEventListener('click', function() { /* Clear button event listener */
+//     document.getElementById('result').innerText = ''; // Clear the result text
+//   }); -->
+
+//   styles.css
+
+//   <!-- .button-container 
+// {
+//     text-align: center;
+// }
+
+// #result {
+//      /* Semi-transparent white background */
+//     padding: 50px;
+//     border-radius: 5px;
+//     font-weight: bold;
+//     font-size: x-large;
+//   }
+
+// .roll-dice {
+//     /* ... existing button styles ... */
+//     background-color: #000000; /* Sienna */
+//     color: white;
+//     border: 2px solid #36302b;
+//     border-radius: 5px;
+//     padding: 12px 24px;
+//     font-size: 1.1em;
+//     cursor: pointer;
+//     transition: background-color 0.3s ease;
+//   }
   
-  .roll-dice:hover {
-    background-color: #585656;
-  }
+//   .roll-dice:hover {
+//     background-color: #585656;
+//   }
   
-  .roll-dice:active {
-    transform: scale(0.98);
-  }
+//   .roll-dice:active {
+//     transform: scale(0.98);
+//   }
   
-  .rolling {
-    animation: roll 0.5s ease-in-out infinite alternate;
-  }
+//   .rolling {
+//     animation: roll 0.5s ease-in-out infinite alternate;
+//   }
   
-  @keyframes roll {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+//   @keyframes roll {
+//     0% { transform: rotate(0deg); }
+//     100% { transform: rotate(360deg); }
+//   }
 
-  body {
-    font-family: 'Playfair Display', serif;
-    background-color: #f0e6d2; /* Light parchment color */
-    color: #333; /* Dark text for readability */
-    margin: 20px; /* Add some margin around the whole page */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 98vh; /* Adjust to account for borders/margins */
-    box-sizing: border-box;
-    border: 3px solid #030303; /* Add a border to the body */
-    border-radius: 10px; /* Optional: round the corners */
-  }
+//   body {
+//     font-family: 'Playfair Display', serif;
+//     background-color: #f0e6d2; /* Light parchment color */
+//     color: #333; /* Dark text for readability */
+//     margin: 20px; /* Add some margin around the whole page */
+//     padding: 20px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     min-height: 98vh; /* Adjust to account for borders/margins */
+//     box-sizing: border-box;
+//     border: 3px solid #030303; /* Add a border to the body */
+//     border-radius: 10px; /* Optional: round the corners */
+//   }
   
-  h1, h2 {
-    font-family: 'MedievalSharp', cursive;
-    color: #000000; /* Saddle brown */
-    text-align: center;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #000000; /* Add a subtle border under headings */
-    padding-bottom: 10px;
-  }
+//   h1, h2 {
+//     font-family: 'MedievalSharp', cursive;
+//     color: #000000; /* Saddle brown */
+//     text-align: center;
+//     margin-bottom: 20px;
+//     border-bottom: 3px solid #000000; /* Add a subtle border under headings */
+//     padding-bottom: 10px;
+//   }
 
-  #clear-button { /* CSS for the clear button */
-    padding: 12px 24px;
-    margin: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    background-color: #ddd; /* Light gray */
-    color: #333;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
+//   #clear-button { /* CSS for the clear button */
+//     padding: 12px 24px;
+//     margin: 5px;
+//     font-size: 1.1em;
+//     cursor: pointer;
+//     background-color: #ddd; /* Light gray */
+//     color: #333;
+//     border: 1px solid #aaa;
+//     border-radius: 5px;
+//     transition: background-color 0.3s ease;
+//   }
 
-  #clear-button:hover {
-    background-color: #ccc; /* Slightly darker gray on hover */
-  }
+//   #clear-button:hover {
+//     background-color: #ccc; /* Slightly darker gray on hover */
+//   }
   
-  #clear-button:active {
-    transform: scale(0.98);
-  } -->
+//   #clear-button:active {
+//     transform: scale(0.98);
+//   } -->
 
-  then create a folder named views, this is the "html" but I used ejs
+//   then create a folder named views, this is the "html" but I used ejs
 
-  index.ejs
+//   index.ejs
 
-  <!-- <!doctype html>
-<html lang="eng">
+//   <!-- <!doctype html>
+// <html lang="eng">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> dndDice</title>
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-</head>
+// <head>
+//     <meta charset="utf-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1">
+//     <title> dndDice</title>
+//     <link rel="stylesheet" href="/styles.css">
+//     <link rel="preconnect" href="https://fonts.googleapis.com">
+//     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+//     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+// </head>
 
-<body style="background-color: pink">
+// <body style="background-color: pink">
 
-    <h1 style="text-align: center"> 🎲 DND DICE 🎲</h1>
-    <h2 style="text-align: center"> Choose your dice! </h2>
-<div class="button-container">
-    <button class="roll-dice" data-sides="4">Roll D4</button>
-    <button class="roll-dice" data-sides="6">Roll D6</button>
-    <button class="roll-dice" data-sides="8">Roll D8</button>
-    <button class="roll-dice" data-sides="10">Roll D10</button>
-    <button class="roll-dice" data-sides="12">Roll D12</button>
-    <button class="roll-dice" data-sides="20">Roll D20</button>
-    <button id="clear-button">Clear Results</button> </div>
-</div>
+//     <h1 style="text-align: center"> 🎲 DND DICE 🎲</h1>
+//     <h2 style="text-align: center"> Choose your dice! </h2>
+// <div class="button-container">
+//     <button class="roll-dice" data-sides="4">Roll D4</button>
+//     <button class="roll-dice" data-sides="6">Roll D6</button>
+//     <button class="roll-dice" data-sides="8">Roll D8</button>
+//     <button class="roll-dice" data-sides="10">Roll D10</button>
+//     <button class="roll-dice" data-sides="12">Roll D12</button>
+//     <button class="roll-dice" data-sides="20">Roll D20</button>
+//     <button id="clear-button">Clear Results</button> </div>
+// </div>
     
     
-    <div id="result"></div>
-    <script src="/main.js"></script>
+//     <div id="result"></div>
+//     <script src="/main.js"></script>
 
-</body>
+// </body>
 
 
-</html> -->
+// </html> -->
 
-then this is my python script
+// then this is my python script
 
-dice_script.py
-<!-- import random
-import sys
+// dice_script.py
+// <!-- import random
+// import sys
 
-def roll_die(sides):
-    return random.randint(1, sides)
+// def roll_die(sides):
+//     return random.randint(1, sides)
 
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Error: No die type provided")
-        sys.exit(1)
-    try:
-        sides = int(sys.argv[1])
-        print(roll_die(sides))
-    except ValueError:
-        print("Error: Invalid die type")
-        sys.exit(1) -->
+// if __name__ == "__main__":
+//     if len(sys.argv) < 2:
+//         print("Error: No die type provided")
+//         sys.exit(1)
+//     try:
+//         sides = int(sys.argv[1])
+//         print(roll_die(sides))
+//     except ValueError:
+//         print("Error: Invalid die type")
+//         sys.exit(1) -->
 
-then I have a docker file you can look at if you want to, it was from me trying to deploy it through azure, once it deployed though it didn't work
+// then I have a docker file you can look at if you want to, it was from me trying to deploy it through azure, once it deployed though it didn't work
 
-<!-- FROM node:18
+// <!-- FROM node:18
 
-WORKDIR /app
+// WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
+// COPY package*.json ./
+// RUN npm install
 
-COPY . /app
+// COPY . /app
 
-EXPOSE 3000
+// EXPOSE 3000
 
-CMD [ "node", "server.js" ] -->
+// CMD [ "node", "server.js" ] -->
 
-additionally make sure you have node_modules, package-lock.json and package.json files. 
+// additionally make sure you have node_modules, package-lock.json and package.json files. 
 
-heres my package.json for reference 
+// heres my package.json for reference 
 
-<!-- {
-  "name": "dnddice",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "devStart": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Hollymm04/dndDice.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Hollymm04/dndDice/issues"
-  },
-  "homepage": "https://github.com/Hollymm04/dndDice#readme",
-  "description": "",
-  "dependencies": {
-    "ejs": "^3.1.10",
-    "express": "^5.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10"
-  } -->
+// <!-- {
+//   "name": "dnddice",
+//   "version": "1.0.0",
+//   "main": "server.js",
+//   "scripts": {
+//     "devStart": "nodemon server.js"
+//   },
+//   "repository": {
+//     "type": "git",
+//     "url": "git+https://github.com/Hollymm04/dndDice.git"
+//   },
+//   "keywords": [],
+//   "author": "",
+//   "license": "ISC",
+//   "bugs": {
+//     "url": "https://github.com/Hollymm04/dndDice/issues"
+//   },
+//   "homepage": "https://github.com/Hollymm04/dndDice#readme",
+//   "description": "",
+//   "dependencies": {
+//     "ejs": "^3.1.10",
+//     "express": "^5.1.0"
+//   },
+//   "devDependencies": {
+//     "nodemon": "^3.1.10"
+//   } -->
 
 
 
